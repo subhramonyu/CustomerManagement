@@ -22,10 +22,10 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" th:href="@{/Customer}">Customer Management</a>
+        <a class="nav-link" th:href="@{/customers}">Customer Management</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" th:href="@{/Customer}">Teacher Management</a>
+        <a class="nav-link" th:href="@{/customers}">Teacher Management</a>
       </li>
     </ul>
   </div>
@@ -38,7 +38,7 @@
 		
 		<div class = "row">
 			<div class = "col-lg-3">
-				<a th:href = "@{/Customer/new}" class = "btn btn-primary btn-sm mb-3"> Add New Customer</a>
+				<a th:href = "@{/customer/new}" class = "btn btn-primary btn-sm mb-3"> Add New Customer</a>
 			</div>
 		</div>
 		<table class = "table table-striped table-bordered">
@@ -52,15 +52,15 @@
 			</thead>
 			
 			<tbody>
-				<tr th:each = "Customer: ${Customer}">
-					<td th:text = "${Customer.firstName}"></td>
-					<td th:text = "${Customer.lastName}"></td>
-					<td th:text = "${Customer.email}"></td>
+				<tr th:each = "customer: ${customer}">
+					<td th:text = "${customer.firstName}"></td>
+					<td th:text = "${customer.lastName}"></td>
+					<td th:text = "${customer.email}"></td>
 					<td>
-						<a th:href = "@{/Customer/edit/{id}(id=${Customer.id})}"
+						<a th:href = "@{/customer/edit/{id}(id=${customer.id})}"
 						 class = "btn btn-primary">Update</a>
 						
-						<a th:href = "@{/Customer/{id}(id=${Customer.id})}"
+						<a th:href = "@{/customer/{id}(id=${customer.id})}"
 						 class = "btn btn-danger">Delete</a>
 						 
 					</td>
