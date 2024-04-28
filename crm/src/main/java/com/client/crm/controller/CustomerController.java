@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.client.crm.entity.Customer;
 import com.client.crm.service.CustomerService;
@@ -21,15 +20,15 @@ public class CustomerController {
 		this.customerservice = customerservice;
 	}
 
-	@RequestMapping("/home")
+	@GetMapping("/home")
 	public String getHomePage() {
-		return "customers";
+		return "home";
 	}
 
 	@GetMapping("/customers")
 	public String listCustomer(Model model) {
 		model.addAttribute("customer", customerservice.getAllCustomer());
-		return "customers";
+		return "customers_management";
 
 	}
 
@@ -43,7 +42,7 @@ public class CustomerController {
 	@PostMapping("/customers")
 	public String saveStudent(@ModelAttribute("customer") Customer customer) {
 		customerservice.saveCustomer(customer);
-		return "redirect:/customers";
+		return "redirect:/customers_management";
 	}
 
 	@GetMapping("/customer/edit/{id}")
@@ -62,13 +61,13 @@ public class CustomerController {
 		existingCustomer.setEmail(customer.getEmail());
 
 		customerservice.updateCustomer(existingCustomer);
-		return "redirect:/customers";
+		return "redirect:/customers_management";
 	}
 
 	@GetMapping("/customer/{id}")
 	public String deleteCustomer(@PathVariable Long id) {
 		customerservice.deleteCustomerById(id);
-		return "redirect:/customers";
+		return "redirect:/customers_management";
 	}
 
 }

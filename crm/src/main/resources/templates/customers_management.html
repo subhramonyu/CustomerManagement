@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Customer Management System</title>
+<title>Helping Hand System - Traffic Assistance</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="#">Customer Management System</a>
+  <a class="navbar-brand" th:href="@{/home}">Helping Hand System - Traffic Assistance</a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -24,12 +24,18 @@
       <li class="nav-item">
         <a class="nav-link" th:href="@{/customers}">Customer Management</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/customers}">Teacher Management</a>
-      </li>
+	  
     </ul>
   </div>
 </nav>
+<div class="container">
+    <!-- Section explaining the purpose -->
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <h2>Assisting in Traffic Situations</h2>
+            <p>The Helping Hand System aims to provide assistance in managing traffic situations effectively. Whether it's coordinating help for stranded motorists, reporting accidents, or offering support during emergencies, our system is here to lend a hand.</p>
+        </div>
+    </div>
 
 	<div class ="container">
 		<div class = "row">

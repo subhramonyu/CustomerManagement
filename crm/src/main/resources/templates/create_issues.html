@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add New Issue - Helping Hand System</title>
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" th:href="@{/home}">Helping Hand System - Traffic Assistance</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/customers}">Customer Management</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center">Add New Issue</h1>
+            <div class="card-body">
+                <form th:action="@{/issues}" method="post">
+                    <div class="form-group">
+                        <label>Issue Type</label>
+                        <input type="text" class="form-control" name="type" placeholder="Enter Issue Type">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" name="description" placeholder="Enter Issue Description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Email</label>
+                        <input type="email" class="form-control" name="contactEmail" placeholder="Enter Contact Email">
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Phone</label>
+                        <input type="text" class="form-control" name="contactPhone" placeholder="Enter Contact Phone">
+                    </div>
+                    <div class="form-group">
+                        <label>Resolution Status</label>
+                        <select class="form-control" name="resolutionStatus">
+                            <option value="Active">Active</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
