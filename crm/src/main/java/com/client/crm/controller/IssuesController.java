@@ -25,12 +25,12 @@ public class IssuesController {
 	@GetMapping("/issue/new")
 	public String createnewIssue(Model model) {
 		Issues issue = new Issues();
-		model.addAttribute("issues", issue);
+		model.addAttribute("issue", issue);
 		return "create_issues";
 	}
 
 	@PostMapping("/issues")
-	public String saveIssue(@ModelAttribute("issues") Issues issues) {
+	public String saveIssue(@ModelAttribute("issue") Issues issues) {
 		issueservice.saveIssue(issues);
 		return "redirect:/home";
 	}

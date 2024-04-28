@@ -40,9 +40,9 @@ public class CustomerController {
 	}
 
 	@PostMapping("/customers")
-	public String saveStudent(@ModelAttribute("customer") Customer customer) {
+	public String saveCustomer(@ModelAttribute("customer") Customer customer) {
 		customerservice.saveCustomer(customer);
-		return "redirect:/customers_management";
+		return "redirect:/customers";
 	}
 
 	@GetMapping("/customer/edit/{id}")
@@ -61,13 +61,13 @@ public class CustomerController {
 		existingCustomer.setEmail(customer.getEmail());
 
 		customerservice.updateCustomer(existingCustomer);
-		return "redirect:/customers_management";
+		return "redirect:/customers";
 	}
 
 	@GetMapping("/customer/{id}")
 	public String deleteCustomer(@PathVariable Long id) {
 		customerservice.deleteCustomerById(id);
-		return "redirect:/customers_management";
+		return "redirect:/customers";
 	}
 
 }

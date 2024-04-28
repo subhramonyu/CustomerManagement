@@ -8,17 +8,17 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="Issues")
+@Table(name="issues")
 public class Issues {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name="reference_Id",nullable=false)
+	@Column(name="reference_Id")
 	private String referenceId;
 
 	
-	@Column(name="Issue_Type",nullable=false)
+	@Column(name="Issue_Type")
 	private String IssueType;
 	
 	@Column(name="description")
