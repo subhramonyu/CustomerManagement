@@ -4,11 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.client.crm.entity.Customer;
 import com.client.crm.entity.Issues;
 import com.client.crm.service.IssuesService;
 
@@ -34,7 +30,5 @@ public class IssuesController {
 		issueservice.saveIssue(issues);
 		return "redirect:/home";
 	}
-
-	
 
 }
